@@ -1,0 +1,84 @@
+Partlist
+
+Exported from iAqua shield.brd at 12/9/2014 10:39:06 PM
+
+EAGLE Version 6.4.0 Copyright (c) 1988-2013 CadSoft
+
+Assembly variant: 
+
+Part     Value            Package                   Library                    Position (mm)         Orientation
+
+BAT1     3.3V             BATTCON_12MM              SparkFun-Electromechanical (41.46401875 44.49636875) MR90
+C1       470pf            C1206                     resistor                   (81.0571875 12.8081)  R0
+C2       10uf             C1206                     resistor                   (15.01819375 56.92936875) R0
+C3       10uf             C1206                     resistor                   (13.620215625 44.933665625) R270
+C4       10uf             C1206                     resistor                   (13.5467375 32.13441875) R270
+D1       CGRM4007-G       SOD-123_MINI-SMA          diode                      (32.084071875 75.29981875) R270
+D2       CGRM4007-G       SOD-123_MINI-SMA          diode                      (37.9979125 75.186)   R270
+D3       CGRM4007-G       SOD-123_MINI-SMA          diode                      (44.097415625 75.182) R270
+D4       CGRM4007-G       SOD-123_MINI-SMA          diode                      (50.159846875 75.18935625) R270
+D5       CGRM4001-G       SOD-123_MINI-SMA          diode                      (13.080740625 80.4300125) R0
+D6       CGRM4001-G       SOD-123_MINI-SMA          diode                      (20.58725 80.4871)    R0
+D7       CGRM4001-G       SOD-123_MINI-SMA          diode                      (13.504265625 38.09000625) R270
+D8       CGRM4001-G       SOD-123_MINI-SMA          diode                      (13.590159375 52.011784375) R270
+IC1      UA7812           TO263-3                   linear                     (22.99915 51.5953875) R270
+IC2      UA7805           TO263-3                   linear                     (23.000540625 37.37434375) R270
+J1       POWER_JACKPTH    POWER_JACK_PTH            SparkFun-Connectors        (-2.762478125 13.4475875) R270
+JP1                       1X01                      pinhead                    (39.3623875 57.384965625) R0
+JP2                       1X03                      pinhead                    (85.601328125 5.52231875) R270
+JP3                       1X03                      pinhead                    (78.409140625 5.523759375) R90
+JP4                       1X04                      pinhead                    (77.156325 78.61265)  R0
+JP5                       1X04                      pinhead                    (77.156325 84.2062875) R0
+JP6                       1X04                      pinhead                    (77.156321875 89.36450625) R0
+JP7                       1X01                      pinhead                    (53.33334375 63.6615375) R0
+JP8                       1X01                      pinhead                    (45.70205 63.591934375) R0
+JP9                       1X01                      pinhead                    (48.282596875 63.629696875) R0
+JP10                      1X01                      pinhead                    (50.815209375 63.653721875) R0
+JP11                      1X01                      pinhead                    (18.78530625 62.82380625) R0
+JP12                      1X01                      pinhead                    (68.593115625 27.40033125) R0
+JP13                      1X01                      pinhead                    (71.142221875 27.383353125) R0
+JP14                      1X01                      pinhead                    (78.746009375 27.377815625) R0
+JP15                      1X01                      pinhead                    (81.2744375 27.447925) R0
+JP16                      1X01                      pinhead                    (73.63146875 27.3715375) R0
+JP17                      1X01                      pinhead                    (76.219753125 27.400315625) R0
+JP18                      1X01                      pinhead                    (21.316075 62.807553125) R0
+LED1     POWER            CHIPLED_1206              led                        (20.334503125 15.73700625) R90
+LED2                      LED5MM                    led                        (63.55200625 86.103553125) R180
+R1       10K              M1206                     resistor                   (26.472746875 15.75471875) R180
+R2       220              M1206                     resistor                   (29.1469 75.711715625) R270
+R3       220              M1206                     resistor                   (35.061815625 75.5995625) R270
+R4       220              M1206                     resistor                   (41.0167875 75.569996875) R270
+R5       220              M1206                     resistor                   (47.19305625 75.58815625) R270
+R6       1.8k             M1206                     resistor                   (85.354040625 78.572078125) R180
+R7       1.8k             M1206                     resistor                   (85.35463125 84.1430375) R180
+R8       220              M1206                     resistor                   (35.9079125 15.438390625) R90
+R9       220              M1206                     resistor                   (39.726771875 15.395709375) R90
+R10      220              M1206                     resistor                   (43.87718125 15.39609375) R90
+R11      220              M1206                     resistor                   (47.6961 15.31066875) R90
+R12      220              M1206                     resistor                   (51.847303125 15.310803125) R90
+R13      220              M1206                     resistor                   (55.6509875 15.30815) R90
+R14      220              M1206                     resistor                   (59.868953125 15.4823) R90
+R15      220              M1206                     resistor                   (63.68051875 15.481846875) R90
+R31      1K               M1206                     resistor                   (39.126421875 62.447896875) R180
+R32      150              M1206                     resistor                   (66.69430625 75.082121875) R180
+R33      PHOTOCELLPTH     PHOTOCELL                 SparkFun-Sensors           (71.4802125 8.792246875) R0
+R34      100              M1206                     resistor                   (64.80325625 31.58103125) R0
+R35      4.7K             M1206                     resistor                   (87.353559375 19.868003125) R180
+R36      1K               M1206                     resistor                   (13.55525 75.823171875) R90
+R37      1K               M1206                     resistor                   (20.62185 75.475753125) R90
+T1                        SOT23-BEC                 transistor                 (45.206290625 58.941078125) R270
+T2                        SOT23-BEC                 transistor                 (16.91803125 78.301253125) R0
+T3                        SOT23-BEC                 transistor                 (23.96439375 77.9447) R0
+U$1      DS1307SO8        SO08                      SparkFun-FreqCtrl          (52.6867 44.71811875) R0
+U$2                       1.4CMX1.2CM_HEAT_SINK_PAD Custom Heat Sink           (26.99420625 51.587453125) R0
+U$3                       1.4CMX1.2CM_HEAT_SINK_PAD Custom Heat Sink           (26.990246875 37.4647625) R0
+U1       ARDUINO-MEGAFULL ARDUINO_MEGA              SparkFun-Boards            (-10.16 17.78)        R0
+X1       MKDS1/4-3,81     4POL381                   con-phoenix-381            (45.24549375 86.22636875) R180
+X2       MKDS1/2-3,81     2POL381                   con-phoenix-381            (31.799553125 8.8005375) R180
+X3       MKDS1/4-3,81     4POL381                   con-phoenix-381            (12.140515625 86.1544375) R0
+X4       MKDS1/2-3,81     2POL381                   con-phoenix-381            (39.726053125 8.7846875) R180
+X5       MKDS1/2-3,81     2POL381                   con-phoenix-381            (47.69358125 8.7846875) R180
+X6       MKDS1/2-3,81     2POL381                   con-phoenix-381            (55.661109375 8.7846875) R180
+X7       MKDS1/2-3,81     2POL381                   con-phoenix-381            (63.68655625 8.7846875) R180
+X8       MKDS1/2-3,81     2POL381                   con-phoenix-381            (53.097559375 86.224359375) R180
+Y1       32.768KHz        TC26H                     SparkFun-FreqCtrl          (51.70250625 38.49364375) R180
