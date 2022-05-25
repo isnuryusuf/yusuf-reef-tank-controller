@@ -24,7 +24,6 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
   {
 
   case 1:  // home screen
-    
     if ((x>=30)&&(x<=90)&&(y>=35)&&(y<=86)) // pressed the thermometer to clear a warning
     {
       if(heaterWarningCleared == false)
@@ -1100,6 +1099,11 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
     // scheduleItem 1 = macros
     // scheduleItem 2 = micros
     // scheduleItem 3 = excel
+    // scheduleItem 4 = pump4
+    // scheduleItem 5 = pump5
+    // scheduleItem 6 = pump6
+    // scheduleItem 7 = pump7
+    // scheduleItem 8 = pump8
     touchWaitTime = LONG_WAIT;
     int doseCap;
     if ((x>=107)&&(x<=129)&&(y>=294)&&(y<=318))  // schedule button  
@@ -1293,6 +1297,29 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       {
         EEPROM.write(22,doseAmt);  // save to memory
       }
+
+      //yusuf
+      else if (scheduleItem==4)
+      {
+        EEPROM.write(450,doseAmt);  // save to memory
+      }
+      else if (scheduleItem==5)
+      {
+        EEPROM.write(451,doseAmt);  // save to memory
+      }
+      else if (scheduleItem==6)
+      {
+        EEPROM.write(452,doseAmt);  // save to memory
+      }
+      else if (scheduleItem==7)
+      {
+        EEPROM.write(453,doseAmt);  // save to memory
+      }
+      else if (scheduleItem==8)
+      {
+        EEPROM.write(454,doseAmt);  // save to memory
+      }
+      //yusuf
     }
     else if ((x>=145)&&(x<=169)&&(y>=167)&&(y<=191))   // pump sec increased by .1 (technically 10 since it's 10th power)
     {
@@ -1310,6 +1337,30 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       {
         pumpSpeed=EEPROM.read(25); // 25 // pump 3 sec/ml
       }
+
+      //yusuf
+      else if (scheduleItem==4)
+      {
+        pumpSpeed=EEPROM.read(455); // 25 // pump 4 sec/ml
+      }
+      else if (scheduleItem==5)
+      {
+        pumpSpeed=EEPROM.read(456); // 25 // pump 5 sec/ml
+      }
+      else if (scheduleItem==6)
+      {
+        pumpSpeed=EEPROM.read(457); // 25 // pump 6 sec/ml
+      }
+      else if (scheduleItem==7)
+      {
+        pumpSpeed=EEPROM.read(458); // 25 // pump 7 sec/ml
+      }
+      else if (scheduleItem==8)
+      {
+        pumpSpeed=EEPROM.read(459); // 25 // pump 8 sec/ml
+      }
+      //yusuf
+     
       if (pumpSpeed < 255) pumpSpeed=(pumpSpeed+1);  // increment up by 1
       if (scheduleItem==1)
       {
@@ -1323,6 +1374,30 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       {
         EEPROM.write(25,pumpSpeed);  // save to memory
       }
+
+      //yusuf
+      else if (scheduleItem==4)
+      {
+        EEPROM.write(455,pumpSpeed);  // save to memory
+      }
+      else if (scheduleItem==5)
+      {
+        EEPROM.write(456,pumpSpeed);  // save to memory
+      }
+      else if (scheduleItem==6)
+      {
+        EEPROM.write(457,pumpSpeed);  // save to memory
+      }
+      else if (scheduleItem==7)
+      {
+        EEPROM.write(458,pumpSpeed);  // save to memory
+      }
+      else if (scheduleItem==8)
+      {
+        EEPROM.write(459,pumpSpeed);  // save to memory
+      }
+      //yusuf
+      
       pumpSpeed=(pumpSpeed*10);  // convert to power of 10 to get actual ms
       itoa(pumpSpeed, char6, 10);
       myGLCD.setColor(255, 77, 0);
@@ -1345,6 +1420,30 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       {
         pumpSpeed=EEPROM.read(25); // 25 // pump 3 sec/ml
       }
+
+      //yusuf
+      else if (scheduleItem==4)
+      {
+        pumpSpeed=EEPROM.read(455); // 34 // pump 4 sec/ml
+      }
+      else if (scheduleItem==5)
+      {
+        pumpSpeed=EEPROM.read(456); // 35 // pump 5 sec/ml
+      }
+      else if (scheduleItem==6)
+      {
+        pumpSpeed=EEPROM.read(457); // 36 // pump 6 sec/ml
+      }
+      else if (scheduleItem==7)
+      {
+        pumpSpeed=EEPROM.read(458); // 37 // pump 7 sec/ml
+      }
+      else if (scheduleItem==8)
+      {
+        pumpSpeed=EEPROM.read(25); // 38 // pump 8 sec/ml
+      }   
+      //yusuf
+      
       if (pumpSpeed > 1) pumpSpeed=(pumpSpeed-1);  // increment up by 1
       if (scheduleItem==1)
       {
@@ -1358,6 +1457,30 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       {
         EEPROM.write(25,pumpSpeed);  // save to memory
       }
+
+      //yusuf
+      else if (scheduleItem==4)
+      {
+        EEPROM.write(455,pumpSpeed);  // save to memory
+      }
+      else if (scheduleItem==5)
+      {
+        EEPROM.write(456,pumpSpeed);  // save to memory
+      }
+      else if (scheduleItem==6)
+      {
+        EEPROM.write(457,pumpSpeed);  // save to memory
+      }
+      else if (scheduleItem==7)
+      {
+        EEPROM.write(458,pumpSpeed);  // save to memory
+      }
+      else if (scheduleItem==8)
+      {
+        EEPROM.write(459,pumpSpeed);  // save to memory
+      }  
+      //yusuf
+      
       pumpSpeed=(pumpSpeed*10);  // convert to power of 10 to get actual ms
       itoa(pumpSpeed, char6, 10);
       myGLCD.setColor(0,0,0);
@@ -1459,6 +1582,30 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       {
         EEPROM.write(263,doseCap); // 280 // dosing 3 resevior capacity in mL;
       }
+
+      //yusuf
+      else if (scheduleItem==4)
+      {
+        EEPROM.write(460,doseCap); // 39 // dosing 4 resevior capacity in mL;
+      }
+      else if (scheduleItem==5)
+      {
+        EEPROM.write(461,doseCap); // 40 // dosing 5 resevior capacity in mL;
+      }
+      else if (scheduleItem==6)
+      {
+        EEPROM.write(262,doseCap); // 41 // dosing 6 resevior capacity in mL;
+      }
+      else if (scheduleItem==7)
+      {
+        EEPROM.write(463,doseCap); // 42 // dosing 7 resevior capacity in mL;
+      }
+      else if (scheduleItem==8)
+      {
+        EEPROM.write(464,doseCap); // 43 // dosing 8 resevior capacity in mL;
+      }     
+      //yusuf
+      
       // EEPROM.write(26,doseCap); // save new value
       doseCap=(doseCap*10);  // convert to power of 10 to get actual mL
       itoa(doseCap, char6, 10);
@@ -1483,6 +1630,29 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
         doseCap=EEPROM.read(263); // 280 // dosing 3 resevior capacity in mL;
       }
 
+      //yusuf
+      else if (scheduleItem==4)
+      {
+        doseCap=EEPROM.read(460); // 39 // dosing 4 resevior capacity in mL;
+      }
+      else if (scheduleItem==5)
+      {
+        doseCap=EEPROM.read(461); // 40 // dosing 5 resevior capacity in mL;
+      }
+      else if (scheduleItem==6)
+      {
+        doseCap=EEPROM.read(262); // 41 // dosing 6 resevior capacity in mL;
+      }
+      else if (scheduleItem==7)
+      {
+        doseCap=EEPROM.read(463); // 42 // dosing 7 resevior capacity in mL;
+      }
+      else if (scheduleItem==8)
+      {
+        doseCap=EEPROM.read(464); // 43 // dosing 8 resevior capacity in mL;
+      }
+      //yusuf
+
       // int doseCap=EEPROM.read(26); // 22 // dosing reseviors capacity in mL;
       if (doseCap > 1) doseCap=(doseCap-1);  // decrease by 1
       if (scheduleItem==1)
@@ -1497,6 +1667,30 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       {
         EEPROM.write(263,doseCap); // 280 // dosing 3 resevior capacity in mL;
       }
+
+      //yusuf
+      else if (scheduleItem==4)
+      {
+        EEPROM.write(460,doseCap); // 39 // dosing 4 resevior capacity in mL;
+      }
+      else if (scheduleItem==5)
+      {
+        EEPROM.write(461,doseCap); // 40 // dosing 5 resevior capacity in mL;
+      }
+      else if (scheduleItem==6)
+      {
+        EEPROM.write(262,doseCap); // 41 // dosing 6 resevior capacity in mL;
+      }
+      else if (scheduleItem==7)
+      {
+        EEPROM.write(463,doseCap); // 42 // dosing 7 resevior capacity in mL;
+      }
+      else if (scheduleItem==8)
+      {
+        EEPROM.write(464,doseCap); // 43 // dosing 8 resevior capacity in mL;
+      }      
+      //yusuf
+      
       //EEPROM.write(26,doseCap); // save new value
       doseCap=(doseCap*10);  // convert to power of 10 to get actual mL
       itoa(doseCap, char6, 10);
@@ -1531,6 +1725,39 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
         EEPROM.write(36,doseCapacity);
         EEPROM.write(37,0);
       }
+
+      //yusuf
+      else if (scheduleItem==4)
+      {
+        doseCapacity=EEPROM.read(460); // 39 // dosing 4 resevior capacity in mL*10;
+        EEPROM.write(465,doseCapacity);
+        EEPROM.write(466,0);
+      }
+      else if (scheduleItem==5)
+      {
+        doseCapacity=EEPROM.read(461); // 40 // dosing 5 resevior capacity in mL*10;
+        EEPROM.write(467,doseCapacity);
+        EEPROM.write(468,0);
+      }
+      else if (scheduleItem==6)
+      {
+        doseCapacity=EEPROM.read(462); // 41 // dosing 6 resevior capacity in mL*10;
+        EEPROM.write(469,doseCapacity);
+        EEPROM.write(470,0);
+      }
+      else if (scheduleItem==7)
+      {
+        doseCapacity=EEPROM.read(463); // 42 // dosing 7 resevior capacity in mL*10;
+        EEPROM.write(471,doseCapacity);
+        EEPROM.write(472,0);
+      }
+      else if (scheduleItem==8)
+      {
+        doseCapacity=EEPROM.read(464); // 43 // dosing 8 resevior capacity in mL*10;
+        EEPROM.write(473,doseCapacity);
+        EEPROM.write(474,0);
+      }      
+      //yusuf
     }
     
     break;

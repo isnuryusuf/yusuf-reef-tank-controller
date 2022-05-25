@@ -1258,11 +1258,11 @@ void screenDosing(byte pumpNo)  // screen to configure the 3 dosing pumps
   if(pumpNo == 3) myGLCD.drawRoundRect(126,37,176,89);//x1,y1,x2,y2
 
   //yusuf
-  if(pumpNo == 4) myGLCD.drawRoundRect(184,37,176,89);//x1,y1,x2,y2
-  if(pumpNo == 5) myGLCD.drawRoundRect(242,37,176,89);//x1,y1,x2,y2
-  if(pumpNo == 6) myGLCD.drawRoundRect(300,37,176,89);//x1,y1,x2,y2
-  if(pumpNo == 7) myGLCD.drawRoundRect(358,37,176,89);//x1,y1,x2,y2
-  if(pumpNo == 8) myGLCD.drawRoundRect(416,37,176,89);//x1,y1,x2,y2
+  if(pumpNo == 4) myGLCD.drawRoundRect(184,37,234,89);//x1,y1,x2,y2
+  if(pumpNo == 5) myGLCD.drawRoundRect(242,37,292,89);//x1,y1,x2,y2
+  if(pumpNo == 6) myGLCD.drawRoundRect(300,37,350,89);//x1,y1,x2,y2
+  if(pumpNo == 7) myGLCD.drawRoundRect(358,37,408,89);//x1,y1,x2,y2
+  if(pumpNo == 8) myGLCD.drawRoundRect(416,37,466,89);//x1,y1,x2,y2
   //yusuf
 
   // DOSE AMOUNT

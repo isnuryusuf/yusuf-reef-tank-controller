@@ -235,10 +235,10 @@ void firstRunSetup()
     EEPROM.write(20,10);  // 20 // pump 1 dose in mL
     EEPROM.write(21,10);  // 21 // pump 2 dose in mL
     EEPROM.write(22,10);   // 22 // pump 3 dose in mL
-    EEPROM.write(23,65);  // 23 // pump 1 ms^10/ml
-    EEPROM.write(24,65);  // 24 // pump 2 ms^10/ml
-    EEPROM.write(25,65);  // 25 // pump 3 ms^10/ml
-    EEPROM.write(26,500); // 26 // dosing 1 reseviors capacity in mL
+    EEPROM.write(23,63);  // 23 // pump 1 ms^10/ml
+    EEPROM.write(24,63);  // 24 // pump 2 ms^10/ml
+    EEPROM.write(25,63);  // 25 // pump 3 ms^10/ml
+    EEPROM.write(26,500); // 26 // dosing 1 reserviors capacity in mL
     EEPROM.write(27,0);   // 27 // dosing 2 reserviors capacity in ML
     EEPROM.write(261,500); // 28 // dosing 3 reserviors capacity in mL
     EEPROM.write(262,0);   // 27 // dosing 2 reserviors capacity in ML
@@ -259,11 +259,11 @@ void firstRunSetup()
     EEPROM.write(453,10);   // 32 // pump 7 dose in mL
     EEPROM.write(454,10);   // 33 // pump 8 dose in mL
 
-    EEPROM.write(455,65);  // 34 // pump 4 ms^10/ml
-    EEPROM.write(456,65);  // 35 // pump 5 ms^10/ml
-    EEPROM.write(457,65);  // 36 // pump 6 ms^10/ml
-    EEPROM.write(458,65);  // 37 // pump 7 ms^10/ml
-    EEPROM.write(459,65);  // 38 // pump 8 ms^10/ml
+    EEPROM.write(455,63);  // 34 // pump 4 ms^10/ml
+    EEPROM.write(456,63);  // 35 // pump 5 ms^10/ml
+    EEPROM.write(457,63);  // 36 // pump 6 ms^10/ml
+    EEPROM.write(458,63);  // 37 // pump 7 ms^10/ml
+    EEPROM.write(459,63);  // 38 // pump 8 ms^10/ml
 
     EEPROM.write(460,500); // 39 // dosing 4 reserviors capacity in mL
     EEPROM.write(461,500); // 40 // dosing 5 reserviors capacity in mL
