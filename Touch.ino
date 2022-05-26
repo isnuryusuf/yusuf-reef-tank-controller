@@ -1110,39 +1110,39 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
     {
       screenSettings();
     }
-    else if ((x>=12)&&(x<=58)&&(y>=39)&&(y<=87))  // macros button  
+    else if ((x>=12)&&(x<=32)&&(y>=39)&&(y<=87))  // macros button  
     {
-      if (scheduleItem!=1) screenDosing(1); // switch to macros schedule
+      if (scheduleItem!=1) screenDosing(1); // switch to macros config
     }
-    else if ((x>=70)&&(x<=116)&&(y>=39)&&(y<=87))  // micros button  
+    else if ((x>=36)&&(x<=56)&&(y>=39)&&(y<=87))  // micros button  
     {
-      if (scheduleItem!=2) screenDosing(2); // switch to micros schedule
+      if (scheduleItem!=2) screenDosing(2); // switch to micros config
     }
-    else if ((x>=128)&&(x<=174)&&(y>=39)&&(y<=87))  // excel button  
+    else if ((x>=60)&&(x<=80)&&(y>=39)&&(y<=87))  // excel button  
     {
-      if (scheduleItem!=3) screenDosing(3); // switch to excel schedule
+      if (scheduleItem!=3) screenDosing(3); // switch to excel config
     }
-
+  
     //yusuf
-    else if ((x>=186)&&(x<=232)&&(y>=39)&&(y<=87))  // Pump4 button  
+    else if ((x>=84)&&(x<=110)&&(y>=39)&&(y<=87))  // Pump4 button  
     {
-      if (scheduleItem!=4) screenDosing(4); // switch to Pump4 schedule
+      if (scheduleItem!=4) screenDosing(4); // switch to Pump4 config
     }
-    else if ((x>=244)&&(x<=290)&&(y>=39)&&(y<=87))  // Pump5 button  
+    else if ((x>=120)&&(x<=140)&&(y>=39)&&(y<=87))  // Pump5 button  
     {
-      if (scheduleItem!=5) screenDosing(5); // switch to Pump5 schedule
+      if (scheduleItem!=5) screenDosing(5); // switch to Pump5 config
     }
-    else if ((x>=302)&&(x<=348)&&(y>=39)&&(y<=87))  // Pump6 button  
+    else if ((x>=150)&&(x<=170)&&(y>=39)&&(y<=87))  // Pump6 button  
     {
-      if (scheduleItem!=6) screenDosing(6); // switch to Pump6 schedule
+      if (scheduleItem!=6) screenDosing(6); // switch to Pump6 config
     }
-    else if ((x>=360)&&(x<=406)&&(y>=39)&&(y<=87))  // Pump7 button  
+    else if ((x>=180)&&(x<=200)&&(y>=39)&&(y<=87))  // Pump7 button  
     {
-      if (scheduleItem!=7) screenDosing(7); // switch to Pump7 schedule
+      if (scheduleItem!=7) screenDosing(7); // switch to Pump7 config
     }
-    else if ((x>=418)&&(x<=424)&&(y>=39)&&(y<=87))  // Pump8 button  
+    else if ((x>=210)&&(x<=230)&&(y>=39)&&(y<=87))  // Pump8 button  
     {
-      if (scheduleItem!=8) screenDosing(8); // switch to Pump8 schedule
+      if (scheduleItem!=8) screenDosing(8); // switch to Pump8 config
     }
     //yusuf
     
@@ -1594,7 +1594,7 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       }
       else if (scheduleItem==6)
       {
-        EEPROM.write(262,doseCap); // 41 // dosing 6 resevior capacity in mL;
+        EEPROM.write(462,doseCap); // 41 // dosing 6 resevior capacity in mL;
       }
       else if (scheduleItem==7)
       {
@@ -1641,7 +1641,7 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       }
       else if (scheduleItem==6)
       {
-        doseCap=EEPROM.read(262); // 41 // dosing 6 resevior capacity in mL;
+        doseCap=EEPROM.read(462); // 41 // dosing 6 resevior capacity in mL;
       }
       else if (scheduleItem==7)
       {
@@ -1679,7 +1679,7 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       }
       else if (scheduleItem==6)
       {
-        EEPROM.write(262,doseCap); // 41 // dosing 6 resevior capacity in mL;
+        EEPROM.write(462,doseCap); // 41 // dosing 6 resevior capacity in mL;
       }
       else if (scheduleItem==7)
       {
@@ -2949,6 +2949,11 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
     // scheduleItem 1 = macros
     // scheduleItem 2 = micros
     // scheduleItem 3 = excel
+    // scheduleItem 4 = pump4
+    // scheduleItem 5 = pump5
+    // scheduleItem 6 = pump6
+    // scheduleItem 7 = pump7
+    // scheduleItem 8 = pump8
     myGLCD.setFont(arial_bold);
 
     // set font color based on micros or macros
@@ -2956,22 +2961,54 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
     if (scheduleItem==2) myGLCD.setColor(255, 77, 0);
     if (scheduleItem==3) myGLCD.setColor(34, 255, 77);
 
+    //yusuf
+    if (scheduleItem==4) myGLCD.setColor(255, 0, 0);
+    if (scheduleItem==5) myGLCD.setColor(255, 255, 0);
+    if (scheduleItem==6) myGLCD.setColor(255, 0, 255);
+    if (scheduleItem==7) myGLCD.setColor(0, 228, 255);
+    if (scheduleItem==8) myGLCD.setColor(0, 255, 0);
+    //yusuf
+
     if ((x>=107)&&(x<=129)&&(y>=294)&&(y<=318))  // schedule button  
     {     
       screenSchedule();
     }
-    else if ((x>=12)&&(x<=58)&&(y>=61)&&(y<=109))  // macros button  
+    else if ((x>=12)&&(x<=40)&&(y>=61)&&(y<=91))  // macros button  
     {     
       if (scheduleItem!=1) screenDosingSched(1); // switch to macros schedule
     }
-    else if ((x>=12)&&(x<=58)&&(y>=110)&&(y<=158))  // micros button  
+    else if ((x>=12)&&(x<=40)&&(y>=91)&&(y<=121))  // micros button  
     {     
       if (scheduleItem!=2) screenDosingSched(2); // switch to micros schedule
     }
-    else if ((x>=12)&&(x<=58)&&(y>=159)&&(y<=207))  // excel button  
+    else if ((x>=12)&&(x<=40)&&(y>=121)&&(y<=151))  // excel button  
     {     
       if (scheduleItem!=3) screenDosingSched(3); // switch to excel schedule
     }
+
+    //yusuf
+    else if ((x>=12)&&(x<=40)&&(y>=151)&&(y<=181))  // pump4 button  
+    {     
+      if (scheduleItem!=4) screenDosingSched(4); // switch to pump4 schedule
+    }
+    else if ((x>=12)&&(x<=40)&&(y>=181)&&(y<=211))  // pump5 button  
+    {     
+      if (scheduleItem!=5) screenDosingSched(5); // switch to pump5 schedule
+    }
+    else if ((x>=12)&&(x<=40)&&(y>=211)&&(y<=241))  // pump6 button  
+    {     
+      if (scheduleItem!=6) screenDosingSched(6); // switch to pump6 schedule
+    }
+    else if ((x>=12)&&(x<=40)&&(y>=241)&&(y<=271))  // pump7 button  
+    {     
+      if (scheduleItem!=7) screenDosingSched(7); // switch to pump7 schedule
+    }
+    else if ((x>=12)&&(x<=40)&&(y>=271)&&(y<=301))  // pump8 button  
+    {     
+      if (scheduleItem!=8) screenDosingSched(8); // switch to pump8 schedule
+    }    
+    //yusuf
+    
     else if ((x>=85)&&(x<=109)&&(y>=110)&&(y<=134)) // on hour up
     {
       int onHour;
@@ -3269,28 +3306,28 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
       }
       myGLCD.print(char3, 199, 129);
     }
-    else if ((x>=51)&&(x<=81)&&(y>=214)&&(y<=244)) // dose on Sunday
+    else if ((x>=60)&&(x<=90)&&(y>=200)&&(y<=230)) // dose on Sunday
     {
       if (scheduleItem==1) // for Macros
       {
         if (pump1.Sunday==1) pump1.Sunday=0;
         else pump1.Sunday=1;
         EEPROM.write(302,pump1.Sunday); // save to memory
-        myFiles.load(51, 214, 30, 30, schedActiveB[pump1.Sunday]); 
+        myFiles.load(71, 194, 30, 30, schedActiveB[pump1.Sunday]); 
       }
       else if (scheduleItem==2) // for Micros
       {
         if (pump2.Sunday==1) pump2.Sunday=0;
         else pump2.Sunday=1;
         EEPROM.write(311,pump2.Sunday); // save to memory
-        myFiles.load(51, 214, 30, 30, schedActiveB[pump2.Sunday]); 
+        myFiles.load(71, 194, 30, 30, schedActiveB[pump2.Sunday]); 
       }
       else if (scheduleItem==3) // for Excel
       {
         if (pump3.Sunday==1) pump3.Sunday=0;
         else pump3.Sunday=1;
         EEPROM.write(320,pump3.Sunday); // save to memory
-        myFiles.load(51, 214, 30, 30, schedActiveB[pump3.Sunday]); 
+        myFiles.load(71, 194, 30, 30, schedActiveB[pump3.Sunday]); 
       }
 
       //yusuf
@@ -3299,61 +3336,61 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
         if (pump4.Sunday==1) pump4.Sunday=0;
         else pump4.Sunday=1;
         EEPROM.write(329,pump4.Sunday); // save to memory
-        myFiles.load(51, 214, 30, 30, schedActiveB[pump4.Sunday]); 
+        myFiles.load(71, 194, 30, 30, schedActiveB[pump4.Sunday]); 
       }
       else if (scheduleItem==5) // for Pump5
       {
         if (pump5.Sunday==1) pump5.Sunday=0;
         else pump5.Sunday=1;
         EEPROM.write(338,pump5.Sunday); // save to memory
-        myFiles.load(51, 214, 30, 30, schedActiveB[pump5.Sunday]); 
+        myFiles.load(71, 194, 30, 30, schedActiveB[pump5.Sunday]); 
       }
       else if (scheduleItem==6) // for Pump6
       {
         if (pump6.Sunday==1) pump6.Sunday=0;
         else pump6.Sunday=1;
         EEPROM.write(347,pump6.Sunday); // save to memory
-        myFiles.load(51, 214, 30, 30, schedActiveB[pump6.Sunday]); 
+        myFiles.load(71, 194, 30, 30, schedActiveB[pump6.Sunday]); 
       }
       else if (scheduleItem==7) // for Pump7
       {
         if (pump7.Sunday==1) pump7.Sunday=0;
         else pump7.Sunday=1;
         EEPROM.write(356,pump7.Sunday); // save to memory
-        myFiles.load(51, 214, 30, 30, schedActiveB[pump7.Sunday]); 
+        myFiles.load(71, 194, 30, 30, schedActiveB[pump7.Sunday]); 
       }
       else if (scheduleItem==8) // for Pump8
       {
         if (pump8.Sunday==1) pump8.Sunday=0;
         else pump8.Sunday=1;
         EEPROM.write(365,pump8.Sunday); // save to memory
-        myFiles.load(51, 214, 30, 30, schedActiveB[pump8.Sunday]); 
+        myFiles.load(71, 194, 30, 30, schedActiveB[pump8.Sunday]); 
       }
       //yusuf
       
     }
-    else if ((x>=105)&&(x<=135)&&(y>=214)&&(y<=244)) // dose on Monday
+    else if ((x>=120)&&(x<=150)&&(y>=200)&&(y<=230)) // dose on Monday
     {
       if (scheduleItem==1) // for Macros
       {
         if (pump1.Monday==1) pump1.Monday=0;
         else pump1.Monday=1;
         EEPROM.write(303,pump1.Monday); // save to memory
-        myFiles.load(105, 214, 30, 30, schedActiveB[pump1.Monday]); 
+        myFiles.load(125, 194, 30, 30, schedActiveB[pump1.Monday]); 
       }
       else if (scheduleItem==2) // for Micros
       {
         if (pump2.Monday==1) pump2.Monday=0;
         else pump2.Monday=1;
         EEPROM.write(312,pump2.Monday); // save to memory
-        myFiles.load(105, 214, 30, 30, schedActiveB[pump2.Monday]); 
+        myFiles.load(125, 194, 30, 30, schedActiveB[pump2.Monday]); 
       }
       else if (scheduleItem==3) // for Excel
       {
         if (pump3.Monday==1) pump3.Monday=0;
         else pump3.Monday=1;
         EEPROM.write(321,pump3.Monday); // save to memory
-        myFiles.load(105, 214, 30, 30, schedActiveB[pump3.Monday]); 
+        myFiles.load(125, 194, 30, 30, schedActiveB[pump3.Monday]); 
       }
 
       //yusuf
@@ -3362,61 +3399,61 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
         if (pump4.Monday==1) pump4.Monday=0;
         else pump4.Monday=1;
         EEPROM.write(330,pump4.Monday); // save to memory
-        myFiles.load(105, 214, 30, 30, schedActiveB[pump4.Monday]); 
+        myFiles.load(125, 194, 30, 30, schedActiveB[pump4.Monday]); 
       }
       else if (scheduleItem==5) // for Pump5
       {
         if (pump5.Monday==1) pump5.Monday=0;
         else pump5.Monday=1;
         EEPROM.write(339,pump5.Monday); // save to memory
-        myFiles.load(105, 214, 30, 30, schedActiveB[pump5.Monday]); 
+        myFiles.load(125, 194, 30, 30, schedActiveB[pump5.Monday]); 
       }
       else if (scheduleItem==6) // for Pump6
       {
         if (pump6.Monday==1) pump6.Monday=0;
         else pump6.Monday=1;
         EEPROM.write(348,pump6.Monday); // save to memory
-        myFiles.load(105, 214, 30, 30, schedActiveB[pump6.Monday]); 
+        myFiles.load(125, 194, 30, 30, schedActiveB[pump6.Monday]); 
       }
       else if (scheduleItem==7) // for Pump7
       {
         if (pump7.Monday==1) pump7.Monday=0;
         else pump7.Monday=1;
         EEPROM.write(357,pump7.Monday); // save to memory
-        myFiles.load(105, 214, 30, 30, schedActiveB[pump7.Monday]); 
+        myFiles.load(125, 194, 30, 30, schedActiveB[pump7.Monday]); 
       }
       else if (scheduleItem==8) // for Pump8
       {
         if (pump8.Monday==1) pump8.Monday=0;
         else pump8.Monday=1;
         EEPROM.write(366,pump8.Monday); // save to memory
-        myFiles.load(105, 214, 30, 30, schedActiveB[pump8.Monday]); 
+        myFiles.load(125, 194, 30, 30, schedActiveB[pump8.Monday]); 
       }
       //yusuf
       
-    }
-    else if ((x>=159)&&(x<=189)&&(y>=214)&&(y<=244)) // dose on Tuesday
+    }       
+    else if ((x>=180)&&(x<=210)&&(y>=200)&&(y<=230)) // dose on Tuesday
     {
       if (scheduleItem==1) // for Macros
       {
         if (pump1.Tuesday==1) pump1.Tuesday=0;
         else pump1.Tuesday=1;
         EEPROM.write(304,pump1.Tuesday); // save to memory
-        myFiles.load(159, 214, 30, 30, schedActiveB[pump1.Tuesday]); 
+        myFiles.load(179, 194, 30, 30, schedActiveB[pump1.Tuesday]); 
       }
       else if (scheduleItem==2) // for Micros
       {
         if (pump2.Tuesday==1) pump2.Tuesday=0;
         else pump2.Tuesday=1;
         EEPROM.write(313,pump2.Tuesday); // save to memory
-        myFiles.load(159, 214, 30, 30, schedActiveB[pump2.Tuesday]); 
+        myFiles.load(179, 194, 30, 30, schedActiveB[pump2.Tuesday]); 
       }
       else if (scheduleItem==3) // for Excel
       {
         if (pump3.Tuesday==1) pump3.Tuesday=0;
         else pump3.Tuesday=1;
         EEPROM.write(322,pump3.Tuesday); // save to memory
-        myFiles.load(159, 214, 30, 30, schedActiveB[pump3.Tuesday]); 
+        myFiles.load(179, 194, 30, 30, schedActiveB[pump3.Tuesday]); 
       }
 
        //yusuf
@@ -3425,61 +3462,61 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
         if (pump4.Tuesday==1) pump4.Tuesday=0;
         else pump4.Tuesday=1;
         EEPROM.write(331,pump4.Tuesday); // save to memory
-        myFiles.load(159, 214, 30, 30, schedActiveB[pump4.Tuesday]); 
+        myFiles.load(179, 194, 30, 30, schedActiveB[pump4.Tuesday]); 
       }
       else if (scheduleItem==5) // for Pump5
       {
         if (pump5.Tuesday==1) pump5.Tuesday=0;
         else pump5.Tuesday=1;
         EEPROM.write(340,pump5.Tuesday); // save to memory
-        myFiles.load(159, 214, 30, 30, schedActiveB[pump5.Tuesday]); 
+        myFiles.load(179, 194, 30, 30, schedActiveB[pump5.Tuesday]); 
       }
       else if (scheduleItem==6) // for Pump6
       {
         if (pump6.Tuesday==1) pump6.Tuesday=0;
         else pump6.Tuesday=1;
         EEPROM.write(349,pump6.Tuesday); // save to memory
-        myFiles.load(159, 214, 30, 30, schedActiveB[pump6.Tuesday]); 
+        myFiles.load(179, 194, 30, 30, schedActiveB[pump6.Tuesday]); 
       }
       else if (scheduleItem==7) // for Pump7
       {
         if (pump7.Tuesday==1) pump7.Tuesday=0;
         else pump7.Tuesday=1;
         EEPROM.write(358,pump7.Tuesday); // save to memory
-        myFiles.load(159, 214, 30, 30, schedActiveB[pump7.Tuesday]); 
+        myFiles.load(179, 194, 30, 30, schedActiveB[pump7.Tuesday]); 
       }
       else if (scheduleItem==8) // for Pump8
       {
         if (pump8.Tuesday==1) pump8.Tuesday=0;
         else pump8.Tuesday=1;
         EEPROM.write(367,pump8.Tuesday); // save to memory
-        myFiles.load(159, 214, 30, 30, schedActiveB[pump8.Tuesday]); 
+        myFiles.load(179, 194, 30, 30, schedActiveB[pump8.Tuesday]); 
       }
       //yusuf
       
-    }
-    else if ((x>=30)&&(x<=60)&&(y>=261)&&(y<=291)) // dose on Wednesday
+    }      
+    else if ((x>=40)&&(x<=70)&&(y>=245)&&(y<=270)) // dose on Wednesday
     {
       if (scheduleItem==1) // for Macros
       {
         if (pump1.Wednesday==1) pump1.Wednesday=0;
         else pump1.Wednesday=1;
         EEPROM.write(305,pump1.Wednesday); // save to memory
-        myFiles.load(30, 261, 30, 30, schedActiveB[pump1.Wednesday]); 
+        myFiles.load(50, 241, 30, 30, schedActiveB[pump1.Wednesday]); 
       }
       else if (scheduleItem==2) // for Micros
       {
         if (pump2.Wednesday==1) pump2.Wednesday=0;
         else pump2.Wednesday=1;
         EEPROM.write(314,pump2.Wednesday); // save to memory
-        myFiles.load(30, 261, 30, 30, schedActiveB[pump2.Wednesday]); 
+        myFiles.load(50, 241, 30, 30, schedActiveB[pump2.Wednesday]); 
       }
       else if (scheduleItem==3) // for Excel
       {
         if (pump3.Wednesday==1) pump3.Wednesday=0;
         else pump3.Wednesday=1;
         EEPROM.write(323,pump3.Wednesday); // save to memory
-        myFiles.load(30, 261, 30, 30, schedActiveB[pump3.Wednesday]); 
+        myFiles.load(50, 241, 30, 30, schedActiveB[pump3.Wednesday]); 
       }
 
        //yusuf
@@ -3488,61 +3525,61 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
         if (pump4.Wednesday==1) pump4.Wednesday=0;
         else pump4.Wednesday=1;
         EEPROM.write(332,pump4.Wednesday); // save to memory
-        myFiles.load(30, 261, 30, 30, schedActiveB[pump4.Wednesday]); 
+        myFiles.load(50, 241, 30, 30, schedActiveB[pump4.Wednesday]); 
       }
       else if (scheduleItem==5) // for Pump5
       {
         if (pump5.Wednesday==1) pump5.Wednesday=0;
         else pump5.Wednesday=1;
         EEPROM.write(341,pump5.Wednesday); // save to memory
-        myFiles.load(30, 261, 30, 30, schedActiveB[pump5.Wednesday]); 
+        myFiles.load(50, 241, 30, 30, schedActiveB[pump5.Wednesday]); 
       }
       else if (scheduleItem==6) // for Pump6
       {
         if (pump6.Wednesday==1) pump6.Wednesday=0;
         else pump6.Wednesday=1;
         EEPROM.write(350,pump6.Wednesday); // save to memory
-        myFiles.load(30, 261, 30, 30, schedActiveB[pump6.Wednesday]); 
+        myFiles.load(50, 241, 30, 30, schedActiveB[pump6.Wednesday]); 
       }
       else if (scheduleItem==7) // for Pump7
       {
         if (pump7.Wednesday==1) pump7.Wednesday=0;
         else pump7.Wednesday=1;
         EEPROM.write(359,pump7.Wednesday); // save to memory
-        myFiles.load(30, 261, 30, 30, schedActiveB[pump7.Wednesday]); 
+        myFiles.load(50, 241, 30, 30, schedActiveB[pump7.Wednesday]); 
       }
       else if (scheduleItem==8) // for Pump8
       {
         if (pump8.Wednesday==1) pump8.Wednesday=0;
         else pump8.Wednesday=1;
         EEPROM.write(368,pump8.Wednesday); // save to memory
-        myFiles.load(30, 261, 30, 30, schedActiveB[pump8.Wednesday]); 
+        myFiles.load(50, 241, 30, 30, schedActiveB[pump8.Wednesday]); 
       }
       //yusuf
       
-    }
-    else if ((x>=84)&&(x<=114)&&(y>=261)&&(y<=291)) // dose on Thursday
+    } 
+    else if ((x>=100)&&(x<=130)&&(y>=245)&&(y<=270)) // dose on Thursday
     {
       if (scheduleItem==1) // for Macros
       {
         if (pump1.Thursday==1) pump1.Thursday=0;
         else pump1.Thursday=1;
         EEPROM.write(306,pump1.Thursday); // save to memory
-        myFiles.load(84, 261, 30, 30, schedActiveB[pump1.Thursday]); 
+        myFiles.load(104, 241, 30, 30, schedActiveB[pump1.Thursday]); 
       }
       else if (scheduleItem==2) // for Micros
       {
         if (pump2.Thursday==1) pump2.Thursday=0;
         else pump2.Thursday=1;
         EEPROM.write(315,pump2.Thursday); // save to memory
-        myFiles.load(84, 261, 30, 30, schedActiveB[pump2.Thursday]); 
+        myFiles.load(104, 241, 30, 30, schedActiveB[pump2.Thursday]); 
       }
       else if (scheduleItem==3) // for Excel
       {
         if (pump3.Thursday==1) pump3.Thursday=0;
         else pump3.Thursday=1;
         EEPROM.write(324,pump3.Thursday); // save to memory
-        myFiles.load(84, 261, 30, 30, schedActiveB[pump3.Thursday]); 
+        myFiles.load(104, 241, 30, 30, schedActiveB[pump3.Thursday]); 
       }
 
        //yusuf
@@ -3551,61 +3588,61 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
         if (pump4.Thursday==1) pump4.Thursday=0;
         else pump4.Thursday=1;
         EEPROM.write(333,pump4.Thursday); // save to memory
-        myFiles.load(84, 261, 30, 30, schedActiveB[pump4.Thursday]); 
+        myFiles.load(104, 241, 30, 30, schedActiveB[pump4.Thursday]); 
       }
       else if (scheduleItem==5) // for Pump5
       {
         if (pump5.Thursday==1) pump5.Thursday=0;
         else pump5.Thursday=1;
         EEPROM.write(342,pump5.Thursday); // save to memory
-        myFiles.load(84, 261, 30, 30, schedActiveB[pump5.Thursday]); 
+        myFiles.load(104, 241, 30, 30, schedActiveB[pump5.Thursday]); 
       }
       else if (scheduleItem==6) // for Pump6
       {
         if (pump6.Thursday==1) pump6.Thursday=0;
         else pump6.Thursday=1;
         EEPROM.write(351,pump6.Thursday); // save to memory
-        myFiles.load(84, 261, 30, 30, schedActiveB[pump6.Thursday]); 
+        myFiles.load(104, 241, 30, 30, schedActiveB[pump6.Thursday]); 
       }
       else if (scheduleItem==7) // for Pump7
       {
         if (pump7.Thursday==1) pump7.Thursday=0;
         else pump7.Thursday=1;
         EEPROM.write(360,pump7.Thursday); // save to memory
-        myFiles.load(84, 261, 30, 30, schedActiveB[pump7.Thursday]); 
+        myFiles.load(104, 241, 30, 30, schedActiveB[pump7.Thursday]); 
       }
       else if (scheduleItem==8) // for Pump8
       {
         if (pump8.Thursday==1) pump8.Thursday=0;
         else pump8.Thursday=1;
         EEPROM.write(369,pump8.Thursday); // save to memory
-        myFiles.load(84, 261, 30, 30, schedActiveB[pump8.Thursday]); 
+        myFiles.load(104, 241, 30, 30, schedActiveB[pump8.Thursday]); 
       }
       //yusuf
       
     }
-    else if ((x>=132)&&(x<=162)&&(y>=261)&&(y<=291)) // dose on Friday
+    else if ((x>=160)&&(x<=190)&&(y>=245)&&(y<=270)) // dose on Friday
     {
       if (scheduleItem==1) // for Macros
       {
         if (pump1.Friday==1) pump1.Friday=0;
         else pump1.Friday=1;
         EEPROM.write(307,pump1.Friday); // save to memory
-        myFiles.load(132, 261, 30, 30, schedActiveB[pump1.Friday]); 
+        myFiles.load(152, 241, 30, 30, schedActiveB[pump1.Friday]); 
       }
       else if (scheduleItem==2) // for Micros
       {
         if (pump2.Friday==1) pump2.Friday=0;
         else pump2.Friday=1;
         EEPROM.write(316,pump2.Friday); // save to memory
-        myFiles.load(132, 261, 30, 30, schedActiveB[pump2.Friday]); 
+        myFiles.load(152, 241, 30, 30, schedActiveB[pump2.Friday]); 
       }
       else if (scheduleItem==3) // for Excel
       {
         if (pump3.Friday==1) pump3.Friday=0;
         else pump3.Friday=1;
         EEPROM.write(325,pump3.Friday); // save to memory
-        myFiles.load(132, 261, 30, 30, schedActiveB[pump3.Friday]); 
+        myFiles.load(152, 241, 30, 30, schedActiveB[pump3.Friday]); 
       }
 
        //yusuf
@@ -3614,61 +3651,61 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
         if (pump4.Friday==1) pump4.Friday=0;
         else pump4.Friday=1;
         EEPROM.write(334,pump4.Friday); // save to memory
-        myFiles.load(132, 261, 30, 30, schedActiveB[pump4.Friday]); 
+        myFiles.load(152, 241, 30, 30, schedActiveB[pump4.Friday]); 
       }
       else if (scheduleItem==5) // for Pump5
       {
         if (pump5.Friday==1) pump5.Friday=0;
         else pump5.Friday=1;
         EEPROM.write(343,pump5.Friday); // save to memory
-        myFiles.load(132, 261, 30, 30, schedActiveB[pump5.Friday]); 
+        myFiles.load(152, 241, 30, 30, schedActiveB[pump5.Friday]); 
       }
       else if (scheduleItem==6) // for Pump6
       {
         if (pump6.Friday==1) pump6.Friday=0;
         else pump6.Friday=1;
         EEPROM.write(352,pump6.Friday); // save to memory
-        myFiles.load(132, 261, 30, 30, schedActiveB[pump6.Friday]); 
+        myFiles.load(152, 241, 30, 30, schedActiveB[pump6.Friday]); 
       }
       else if (scheduleItem==7) // for Pump7
       {
         if (pump7.Friday==1) pump7.Friday=0;
         else pump7.Friday=1;
         EEPROM.write(361,pump7.Friday); // save to memory
-        myFiles.load(132, 261, 30, 30, schedActiveB[pump7.Friday]); 
+        myFiles.load(152, 241, 30, 30, schedActiveB[pump7.Friday]); 
       }
       else if (scheduleItem==8) // for Pump8
       {
         if (pump8.Friday==1) pump8.Friday=0;
         else pump8.Friday=1;
         EEPROM.write(370,pump8.Friday); // save to memory
-        myFiles.load(132, 261, 30, 30, schedActiveB[pump8.Friday]); 
+        myFiles.load(152, 241, 30, 30, schedActiveB[pump8.Friday]); 
       }
       //yusuf
       
     }
-    else if ((x>=186)&&(x<=216)&&(y>=261)&&(y<=291)) // dose on Saturday
+    else if ((x>=220)&&(x<=250)&&(y>=245)&&(y<=270)) // dose on Saturday
     {
       if (scheduleItem==1) // for Macros
       {
         if (pump1.Saturday==1) pump1.Saturday=0;
         else pump1.Saturday=1;
         EEPROM.write(308,pump1.Saturday); // save to memory
-        myFiles.load(186, 261, 30, 30, schedActiveB[pump1.Saturday]); 
+        myFiles.load(206, 241, 30, 30, schedActiveB[pump1.Saturday]); 
       }
       else if (scheduleItem==2) // for Micros
       {
         if (pump2.Saturday==1) pump2.Saturday=0;
         else pump2.Saturday=1;
         EEPROM.write(317,pump2.Saturday); // save to memory
-        myFiles.load(186, 261, 30, 30, schedActiveB[pump2.Saturday]); 
+        myFiles.load(206, 241, 30, 30, schedActiveB[pump2.Saturday]); 
       }
       else if (scheduleItem==3) // for Excel
       {
         if (pump3.Saturday==1) pump3.Saturday=0;
         else pump3.Saturday=1;
         EEPROM.write(326,pump3.Saturday); // save to memory
-        myFiles.load(186, 261, 30, 30, schedActiveB[pump3.Saturday]); 
+        myFiles.load(206, 241, 30, 30, schedActiveB[pump3.Saturday]); 
       }
 
        //yusuf
@@ -3677,35 +3714,35 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
         if (pump4.Saturday==1) pump4.Saturday=0;
         else pump4.Saturday=1;
         EEPROM.write(335,pump4.Saturday); // save to memory
-        myFiles.load(186, 261, 30, 30, schedActiveB[pump4.Saturday]); 
+        myFiles.load(206, 241, 30, 30, schedActiveB[pump4.Saturday]); 
       }
       else if (scheduleItem==5) // for Pump5
       {
         if (pump5.Saturday==1) pump5.Saturday=0;
         else pump5.Saturday=1;
         EEPROM.write(344,pump5.Saturday); // save to memory
-        myFiles.load(186, 261, 30, 30, schedActiveB[pump5.Saturday]); 
+        myFiles.load(206, 241, 30, 30, schedActiveB[pump5.Saturday]); 
       }
       else if (scheduleItem==6) // for Pump6
       {
         if (pump6.Saturday==1) pump6.Saturday=0;
         else pump6.Saturday=1;
         EEPROM.write(353,pump6.Saturday); // save to memory
-        myFiles.load(186, 261, 30, 30, schedActiveB[pump6.Saturday]); 
+        myFiles.load(206, 241, 30, 30, schedActiveB[pump6.Saturday]); 
       }
       else if (scheduleItem==7) // for Pump7
       {
         if (pump7.Saturday==1) pump7.Saturday=0;
         else pump7.Saturday=1;
         EEPROM.write(362,pump7.Saturday); // save to memory
-        myFiles.load(186, 261, 30, 30, schedActiveB[pump7.Saturday]); 
+        myFiles.load(206, 241, 30, 30, schedActiveB[pump7.Saturday]); 
       }
       else if (scheduleItem==8) // for Pump8
       {
         if (pump8.Saturday==1) pump8.Saturday=0;
         else pump8.Saturday=1;
         EEPROM.write(371,pump8.Saturday); // save to memory
-        myFiles.load(186, 261, 30, 30, schedActiveB[pump8.Saturday]); 
+        myFiles.load(206, 241, 30, 30, schedActiveB[pump8.Saturday]); 
       }
       //yusuf
       

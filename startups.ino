@@ -247,7 +247,7 @@ void firstRunSetup()
     
     EEPROM.write(32,100); // remaining volume for pump 1 (high byte ^10)
     EEPROM.write(33,0);   // remaining volume for pump 1 (low byte)
-    EEPROM.write(34,100); // remaining volume for pump 2 (high byte ^10)
+    EEPROM.write(34,100); // remaining volume for pump 2 (high byte ^10) 
     EEPROM.write(35,0);   // remaining volume for pump 2 (low byte)
     EEPROM.write(36,100); // remaining volume for pump 3 (high byte ^10)
     EEPROM.write(37,0);   // remaining volume for pump 3 (low byte)

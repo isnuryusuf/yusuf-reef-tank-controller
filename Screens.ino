@@ -1239,31 +1239,31 @@ void screenDosing(byte pumpNo)  // screen to configure the 3 dosing pumps
   myGLCD.drawLine(0, 227, 239, 227);
   
   //Display pump selectors
-  myFiles.load(12, 39, 46, 48,"15pump1.raw",2);
-  myFiles.load(70, 39, 46, 48,"15pump2.raw",2);
-  myFiles.load(128, 39, 46, 48,"15pump3.raw",2);
+  myFiles.load(12, 39, 23, 48,"15pump1s.raw",2);
+  myFiles.load(40, 39, 23, 48,"15pump2s.raw",2);
+  myFiles.load(68, 39, 23, 48,"15pump3s.raw",2);
 
   //yusuf
-  myFiles.load(186, 39, 46, 48,"15pump4.raw",2);
-  myFiles.load(244, 39, 46, 48,"15pump5.raw",2);
-  myFiles.load(302, 39, 46, 48,"15pump6.raw",2);
-  myFiles.load(360, 39, 46, 48,"15pump7.raw",2);
-  myFiles.load(418, 39, 46, 48,"15pump8.raw",2);  
+  myFiles.load(96, 39, 23, 48,"15pump4s.raw",2);
+  myFiles.load(124, 39, 23, 48,"15pump5s.raw",2);
+  myFiles.load(152, 39, 23, 48,"15pump6s.raw",2);
+  myFiles.load(180, 39, 23, 48,"15pump7s.raw",2);
+  myFiles.load(208, 39, 23, 48,"15pump8s.raw",2);  
   //yusuf
   
-  //Highlight selected pump
+  //Highlight selected pump on pump config
   myGLCD.setColor(VGA_WHITE); 
-  if(pumpNo == 1) myGLCD.drawRoundRect(10,37,60,89);//x1,y1,x2,y2
-  if(pumpNo == 2) myGLCD.drawRoundRect(68,37,118,89);//x1,y1,x2,y2
-  if(pumpNo == 3) myGLCD.drawRoundRect(126,37,176,89);//x1,y1,x2,y2
+  if(pumpNo == 1) myGLCD.drawRoundRect(10,37,37,89);//x1,y1,x2,y2
+  if(pumpNo == 2) myGLCD.drawRoundRect(38,37,65,89);//x1,y1,x2,y2
+  if(pumpNo == 3) myGLCD.drawRoundRect(66,37,93,89);//x1,y1,x2,y2
 
   //yusuf
-  if(pumpNo == 4) myGLCD.drawRoundRect(184,37,234,89);//x1,y1,x2,y2
-  if(pumpNo == 5) myGLCD.drawRoundRect(242,37,292,89);//x1,y1,x2,y2
-  if(pumpNo == 6) myGLCD.drawRoundRect(300,37,350,89);//x1,y1,x2,y2
-  if(pumpNo == 7) myGLCD.drawRoundRect(358,37,408,89);//x1,y1,x2,y2
-  if(pumpNo == 8) myGLCD.drawRoundRect(416,37,466,89);//x1,y1,x2,y2
-  //yusuf
+  if(pumpNo == 4) myGLCD.drawRoundRect(94,37,121,89);//x1,y1,x2,y2
+  if(pumpNo == 5) myGLCD.drawRoundRect(122,37,149,89);//x1,y1,x2,y2
+  if(pumpNo == 6) myGLCD.drawRoundRect(150,37,177,89);//x1,y1,x2,y2
+  if(pumpNo == 7) myGLCD.drawRoundRect(178,37,205,89);//x1,y1,x2,y2
+  if(pumpNo == 8) myGLCD.drawRoundRect(206,37,233,89);//x1,y1,x2,y2
+  //yusufyusuf
 
   // DOSE AMOUNT
   myGLCD.setColor(255, 255, 255);
@@ -1377,7 +1377,7 @@ void screenDosing(byte pumpNo)  // screen to configure the 3 dosing pumps
   myGLCD.setFont(arial_bold);
   myGLCD.setColor(255, 255, 255);
   myGLCD.print(F("FULL"),4,240);
-  myGLCD.print(F("VOL."),4,266);
+  myGLCD.print(F("VOL"),4,266);
 
   if (pumpNo==1)
   {
@@ -2860,23 +2860,32 @@ void screenDosingSched(byte pumpNo)
   myFiles.load(107, 294, 26, 26, "footschd.raw",2);
 
   // macro and micro buttons to swap schedules
-  myFiles.load(12, 61, 46, 48,"15pump1.raw",2);
-  myFiles.load(12, 110, 46, 48,"15pump2.raw",2);
-  myFiles.load(12, 159, 46, 48,"15pump3.raw",2);
+  myFiles.load(12, 61, 23, 30,"15pump1sc.raw",2);
+  myFiles.load(12, 91, 23, 30,"15pump2sc.raw",2);
+  myFiles.load(12, 121, 23, 30,"15pump3sc.raw",2);
 
   //yusuf
-  myFiles.load(12, 208, 46, 48,"15pump4.raw",2);
-  myFiles.load(12, 257, 46, 48,"15pump5.raw",2);
-  myFiles.load(12, 306, 46, 48,"15pump6.raw",2);
-  myFiles.load(12, 355, 46, 48,"15pump7.raw",2);
-  myFiles.load(12, 404, 46, 48,"15pump8.raw",2);  
+  myFiles.load(12, 151, 23, 30,"15pump4sc.raw",2);
+  myFiles.load(12, 181, 23, 30,"15pump5sc.raw",2);
+  myFiles.load(12, 211, 23, 30,"15pump6sc.raw",2);
+  myFiles.load(12, 241, 23, 30,"15pump7sc.raw",2);
+  myFiles.load(12, 271, 23, 30,"15pump8sc.raw",2);  
+  //myFiles.load(12, 404, 23, 48,"15pump8sc.raw",2); 
   //yusuf
   
   //Highlight selected pump
   myGLCD.setColor(VGA_WHITE); 
-  if(pumpNo == 1) myGLCD.drawRoundRect(12,61,58,109);//x1,y1,x2,y2
-  if(pumpNo == 2) myGLCD.drawRoundRect(12,110,58,158);//x1,y1,x2,y2
-  if(pumpNo == 3) myGLCD.drawRoundRect(12,159,58,207);//x1,y1,x2,y2
+  if(pumpNo == 1) myGLCD.drawRoundRect(11,61,35,92);//x1,y1,x2,y2
+  if(pumpNo == 2) myGLCD.drawRoundRect(11,90,35,123);//x1,y1,x2,y2
+  if(pumpNo == 3) myGLCD.drawRoundRect(11,120,35,153);//x1,y1,x2,y2
+
+  //yusuf
+  if(pumpNo == 4) myGLCD.drawRoundRect(11,150,35,182);//x1,y1,x2,y2
+  if(pumpNo == 5) myGLCD.drawRoundRect(11,180,35,213);//x1,y1,x2,y2
+  if(pumpNo == 6) myGLCD.drawRoundRect(11,210,35,243);//x1,y1,x2,y2
+  if(pumpNo == 7) myGLCD.drawRoundRect(11,240,35,272);//x1,y1,x2,y2
+  if(pumpNo == 8) myGLCD.drawRoundRect(11,271,35,302);//x1,y1,x2,y2 
+  //yusuf
   
   // vars for scheduling
   byte onHour, onMin, daySun, dayMon, dayTue, dayWed, dayThu, dayFri, daySat;
@@ -3028,6 +3037,23 @@ void screenDosingSched(byte pumpNo)
   myFiles.load(164, 140, 24, 24, arrowButton[1],2);
 
   // days of the week check boxes
+  myGLCD.print(F("SUN"), 74, 183);
+  myFiles.load(71, 194, 30, 30, schedActiveB[daySun],2); 
+  myGLCD.print(F("MON"), 118, 183);
+  myFiles.load(125, 194, 30, 30, schedActiveB[dayMon],2); 
+  myGLCD.print(F("TUE"), 172, 183);
+  myFiles.load(179, 194, 30, 30, schedActiveB[dayTue],2); 
+  myGLCD.print(F("WED"), 53, 230);
+  myFiles.load(50, 241, 30, 30, schedActiveB[dayWed],2); 
+  myGLCD.print(F("THU"), 97, 230);
+  myFiles.load(104, 241, 30, 30, schedActiveB[dayThu],2); 
+  myGLCD.print(F("FRI"), 155, 230);
+  myFiles.load(152, 241, 30, 30, schedActiveB[dayFri],2); 
+  myGLCD.print(F("SAT"), 209, 230);
+  myFiles.load(206, 241, 30, 30, schedActiveB[daySat],2); 
+
+  // days of the week check boxes
+  /*
   myGLCD.print(F("SUN"), 54, 203);
   myFiles.load(51, 214, 30, 30, schedActiveB[daySun],2); 
   myGLCD.print(F("MON"), 108, 203);
@@ -3042,6 +3068,7 @@ void screenDosingSched(byte pumpNo)
   myFiles.load(132, 261, 30, 30, schedActiveB[dayFri],2); 
   myGLCD.print(F("SAT"), 189, 250);
   myFiles.load(186, 261, 30, 30, schedActiveB[daySat],2); 
+  */
 }
 
 void screenScreen() // this is the screen for setting brightness settings

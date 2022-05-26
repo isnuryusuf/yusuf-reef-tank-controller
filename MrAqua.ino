@@ -1820,16 +1820,16 @@ void checkDosing() // updates dosing info on the home screen
   long vol3_L=EEPROM.read(37); // read the remaining volume for pump 3 (low byte)
 
   //yusuf
-  long vol4_H=EEPROM.read(465); // read the remaining volume for pump 3 (high byte *10)
-  long vol4_L=EEPROM.read(466); // read the remaining volume for pump 3 (low byte)
-  long vol5_H=EEPROM.read(467); // read the remaining volume for pump 3 (high byte *10)
-  long vol5_L=EEPROM.read(468); // read the remaining volume for pump 3 (low byte)
-  long vol6_H=EEPROM.read(469); // read the remaining volume for pump 3 (high byte *10)
-  long vol6_L=EEPROM.read(470); // read the remaining volume for pump 3 (low byte)
-  long vol7_H=EEPROM.read(471); // read the remaining volume for pump 3 (high byte *10)
-  long vol7_L=EEPROM.read(472); // read the remaining volume for pump 3 (low byte)
-  long vol8_H=EEPROM.read(473); // read the remaining volume for pump 3 (high byte *10)
-  long vol8_L=EEPROM.read(474); // read the remaining volume for pump 3 (low byte)
+  long vol4_H=EEPROM.read(465); // read the remaining volume for pump 4 (high byte *10)
+  long vol4_L=EEPROM.read(466); // read the remaining volume for pump 4 (low byte)
+  long vol5_H=EEPROM.read(467); // read the remaining volume for pump 5 (high byte *10)
+  long vol5_L=EEPROM.read(468); // read the remaining volume for pump 5 (low byte)
+  long vol6_H=EEPROM.read(469); // read the remaining volume for pump 6 (high byte *10)
+  long vol6_L=EEPROM.read(470); // read the remaining volume for pump 6 (low byte)
+  long vol7_H=EEPROM.read(471); // read the remaining volume for pump 7 (high byte *10)
+  long vol7_L=EEPROM.read(472); // read the remaining volume for pump 7 (low byte)
+  long vol8_H=EEPROM.read(473); // read the remaining volume for pump 8 (high byte *10)
+  long vol8_L=EEPROM.read(474); // read the remaining volume for pump 8 (low byte)
   //yusuf
   
   long vol1 = (vol1_H*10)+vol1_L;
@@ -1839,7 +1839,7 @@ void checkDosing() // updates dosing info on the home screen
   //yusuf
   long vol4 = (vol4_H*10)+vol4_L;
   long vol5 = (vol5_H*10)+vol5_L;
-  long vol6 = (vol6_H*10)+vol6_L;  
+  long vol6 = (vol6_H*10)+vol6_L;
   long vol7 = (vol7_H*10)+vol7_L;
   long vol8 = (vol8_H*10)+vol8_L;
   //yusuf
@@ -1851,11 +1851,11 @@ void checkDosing() // updates dosing info on the home screen
   //doseCap=doseCap*10;  // to power of 10
 
   //yusuf
-  long dose4Amt=EEPROM.read(450); // 20 // pump 4 dose in mL
-  long dose5Amt=EEPROM.read(451); // 20 // pump 5 dose in mL
-  long dose6Amt=EEPROM.read(452); // 20 // pump 6 dose in mL
-  long dose7Amt=EEPROM.read(453); // 20 // pump 7 dose in mL
-  long dose8Amt=EEPROM.read(454); // 20 // pump 8 dose in mL
+  long dose4Amt=EEPROM.read(450); // 29 // pump 4 dose in mL
+  long dose5Amt=EEPROM.read(451); // 30 // pump 5 dose in mL
+  long dose6Amt=EEPROM.read(452); // 31 // pump 6 dose in mL
+  long dose7Amt=EEPROM.read(453); // 32 // pump 7 dose in mL
+  long dose8Amt=EEPROM.read(454); // 33 // pump 8 dose in mL
   //yusuf
   
   long dose1Cap=EEPROM.read(26);
@@ -1883,11 +1883,11 @@ void checkDosing() // updates dosing info on the home screen
   long doses3=(vol3/dose3Amt);  // cacluate how many Micro are left
 
   //yusuf
-  long doses4=(vol4/dose4Amt);  // cacluate how many Macro doeses are left
-  long doses5=(vol5/dose5Amt);  // cacluate how many Micro are left
-  long doses6=(vol6/dose6Amt);  // cacluate how many Micro are left  
-  long doses7=(vol7/dose7Amt);  // cacluate how many Micro are left
-  long doses8=(vol8/dose8Amt);  // cacluate how many Micro are left  
+  long doses4=(vol4/dose4Amt);  // cacluate how many pump4 doeses are left
+  long doses5=(vol5/dose5Amt);  // cacluate how many pump5 are left
+  long doses6=(vol6/dose6Amt);  // cacluate how many pump6 are left  
+  long doses7=(vol7/dose7Amt);  // cacluate how many pump7 are left
+  long doses8=(vol8/dose8Amt);  // cacluate how many pump8 are left  
   //yusuf
 
  // here we prepare to draw the fill over the screen icons
@@ -1945,18 +1945,18 @@ void checkDosing() // updates dosing info on the home screen
   //yusuf
 
   // if the math above throws the pixels outside the tube, set it back to empty
-  if ((y1mac > 163)||(y1mac < 110)) y1mac = 163;
-  if ((y1mic > 163)||(y1mic < 110)) y1mic = 163;
-  if ((y1exc > 163)||(y1exc < 110)) y1exc = 163;
+  if ((y1mac > 163)||(y1mac < 125)) y1mac = 163;
+  if ((y1mic > 163)||(y1mic < 125)) y1mic = 163;
+  if ((y1exc > 163)||(y1exc < 125)) y1exc = 163;
   //if ((y1exc > 225)||(y1exc < 186)) y1exc = 226;
 
   //yusuf
-  if ((y1pump4 > 203)||(y1pump4 < 150)) y1pump4 = 203;
-  if ((y1pump5 > 203)||(y1pump5 < 150)) y1pump5 = 203;
-  if ((y1pump6 > 203)||(y1pump6 < 150)) y1pump6 = 203;
+  if ((y1pump4 > 203)||(y1pump4 < 165)) y1pump4 = 203;
+  if ((y1pump5 > 203)||(y1pump5 < 165)) y1pump5 = 203;
+  if ((y1pump6 > 203)||(y1pump6 < 165)) y1pump6 = 203;
   
-  if ((y1pump7 > 243)||(y1pump7 < 190)) y1pump7 = 243;
-  if ((y1pump8 > 243)||(y1pump8 < 190)) y1pump8 = 243;
+  if ((y1pump7 > 243)||(y1pump7 < 205)) y1pump7 = 243;
+  if ((y1pump8 > 243)||(y1pump8 < 205)) y1pump8 = 243;
   //yusuf
 
 
@@ -1980,59 +1980,59 @@ void checkDosing() // updates dosing info on the home screen
   //x1 start kekanan, y1 start kebawah, x2 end kanan, y2 end bawah  //x1,y1,x2,y2
   //draw fert fill
   myGLCD.setColor(34, 81, 255);  // blue for macros
-  myGLCD.fillRect(111,y1mac,122,150);
+  myGLCD.fillRect(111,y1mac,122,153);
   myGLCD.setColor(255, 77, 0);  // orange for micros
-  myGLCD.fillRect(131,y1mic,142,150);
+  myGLCD.fillRect(131,y1mic,142,153);
   myGLCD.setColor(34, 255, 77);  // green for excel
-  myGLCD.fillRect(151,y1exc,162,150);
+  myGLCD.fillRect(151,y1exc,162,153);
                      //130
   //yusuf
   myGLCD.setColor(255, 0, 0);  // red for pump4
-  myGLCD.fillRect(111,y1pump4,122,190);
+  myGLCD.fillRect(111,y1pump4,122,193);
   myGLCD.setColor(255, 255, 0);  // yellow for pump5
-  myGLCD.fillRect(131,y1pump5,142,190);
+  myGLCD.fillRect(131,y1pump5,142,193);
   myGLCD.setColor(255, 0, 255);  // purple for pump6
-  myGLCD.fillRect(151,y1pump6,162,190);
+  myGLCD.fillRect(151,y1pump6,162,193);
   
   myGLCD.setColor(0, 228, 255);  // cyan for excel
-  myGLCD.fillRect(111,y1pump7,122,230);
+  myGLCD.fillRect(111,y1pump7,122,233);
   myGLCD.setColor(0, 255, 0);  // green for excel
-  myGLCD.fillRect(131,y1pump8,142,230);
+  myGLCD.fillRect(131,y1pump8,142,233);
   //yusuf
   
   // values to center remaining dose numerical values over tubes on screen
-  int xcharMacro=112;//2 digits
-  int xcharMicro=132;
-  int xcharExcel=152;
+  int xcharMacro=110;//2 digits
+  int xcharMicro=130;
+  int xcharExcel=150;
 
   //yusuf
-  int xcharPump4=112;
-  int xcharPump5=132;
-  int xcharPump6=152;
+  int xcharPump4=110;
+  int xcharPump5=130;
+  int xcharPump6=150;
   
-  int xcharPump7=112;
-  int xcharPump8=132;  
+  int xcharPump7=110;
+  int xcharPump8=130;  
   //yusuf
   
-  if (doses1 <= 9) xcharMacro=116;//1 digit
-  if (doses2 <= 9) xcharMicro=136;
-  if (doses3 <= 9) xcharExcel=156;
-  if (doses1 > 99) xcharMacro=108;//3 digits
-  if (doses2 > 99) xcharMicro=128;
-  if (doses3 > 99) xcharExcel=148;
+  if (doses1 <= 9) xcharMacro=114;//1 digit
+  if (doses2 <= 9) xcharMicro=134;
+  if (doses3 <= 9) xcharExcel=154;
+  if (doses1 > 99) xcharMacro=106;//3 digits
+  if (doses2 > 99) xcharMicro=126;
+  if (doses3 > 99) xcharExcel=146;
 
   //yusuf
-  if (doses4 <= 9) xcharPump4=116;//1 digit
-  if (doses5 <= 9) xcharPump5=136;
-  if (doses6 <= 9) xcharPump6=156;
-  if (doses7 <= 9) xcharPump7=116;
-  if (doses8 <= 9) xcharPump8=136;
+  if (doses4 <= 9) xcharPump4=114;//1 digit
+  if (doses5 <= 9) xcharPump5=134;
+  if (doses6 <= 9) xcharPump6=154;
+  if (doses7 <= 9) xcharPump7=114;
+  if (doses8 <= 9) xcharPump8=134;
 
-  if (doses4 > 99) xcharPump4=108;//3 digits
-  if (doses5 > 99) xcharPump5=128;
-  if (doses6 > 99) xcharPump6=148;
-  if (doses7 > 99) xcharPump7=108;
-  if (doses8 > 99) xcharPump8=128;  
+  if (doses4 > 99) xcharPump4=106;//3 digits
+  if (doses5 > 99) xcharPump5=126;
+  if (doses6 > 99) xcharPump6=146;
+  if (doses7 > 99) xcharPump7=106;
+  if (doses8 > 99) xcharPump8=126;  
   //yusuf
  
   // draw remaining dose numerical values
