@@ -210,7 +210,8 @@
 #include <URTouch.h>  // used to interface with the touch controller on the TFT display
 //#include <UTouch.h> //yusuf
 #include <DS1307RTC.h>
-//#include <DS3232RTC.h>
+//#include <DS3232RTC.h> 
+//#include <DS3231.h> //yusuf
 #include <TimeLib.h>
 #include <TimeAlarms.h>  // used to power schedules
 #include <IRremote.h>  // used to send IR commands to the light, LED must be on pin 9
@@ -221,9 +222,6 @@
 //yusuf
 #include <NewTone.h>
 #define TONE_PIN A10 // Pin you have speaker/piezo connected to (be sure to include a 100 ohm resistor).
-int melody[] = { 262, 196, 196, 220, 196, 0, 247, 262 };
-int noteDurations[] = { 4, 8, 8, 4, 4, 4, 4, 4 };
-
 //#include <SoftwareSerial.h> 
 ////SoftwareSerial module_bluetooth(0, 1); // pin RX | TX
 //SoftwareSerial HM10(0, 1); // RX = 0, TX = 1
@@ -247,7 +245,6 @@ extern uint8_t arial_bold[];
 //initialize PCA9865
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x40);
 Adafruit_PWMServoDriver pwm2 = Adafruit_PWMServoDriver(0x41);
-
 
 // define relay pins
 const int pwrLight1Pin = A0; //arduino A0
@@ -276,6 +273,7 @@ const int fan2Pin = A12;
 const int internalTempPin = A13;
 const int ATOFloatPin = A14;
 const int TankFloatPin = A15;
+const int thresholdFloat = 10;
 const int screenBrightPin = 8; // pwm pin for the LCD backlight
 // const int ShouldBeIrSignal = 9; //untuk IR Signal
 //define pump pins
@@ -1320,6 +1318,13 @@ void checkATO()
 {
   if(ATOEnabled)
   {
+    int analogValue = analogRead(TankFloatPin);
+      if (analogValue > thresholdFloat) {
+        digitalWrite(TankFloatPin, HIGH);
+        //Serial.println(F("\nNyala")); 
+      } else {
+      digitalWrite(TankFloatPin, LOW);
+    } 
     WaterLevel = digitalRead(TankFloatPin);
     if(ResSwitchEnabled)
     {
