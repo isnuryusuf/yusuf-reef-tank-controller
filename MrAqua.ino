@@ -219,6 +219,11 @@
 #include <Adafruit_PWMServoDriver.h> //PCA9865
 
 //yusuf
+#include <NewTone.h>
+#define TONE_PIN A10 // Pin you have speaker/piezo connected to (be sure to include a 100 ohm resistor).
+int melody[] = { 262, 196, 196, 220, 196, 0, 247, 262 };
+int noteDurations[] = { 4, 8, 8, 4, 4, 4, 4, 4 };
+
 //#include <SoftwareSerial.h> 
 ////SoftwareSerial module_bluetooth(0, 1); // pin RX | TX
 //SoftwareSerial HM10(0, 1); // RX = 0, TX = 1
@@ -259,7 +264,11 @@ const int pwrAux2Pin = A7;
 //define misc pins
 const int lightSensorPin = A8;  // analog pin for the ambient light sensor
 const int pressureSensorPin = A9;  // analog pin for the CO2 pressure sensor
+
 // const int free10Pin = A10;  // last free analog pin
+//yusuf
+//const int buzzer1Pin = A10; //buzzer to arduino pin analog 10
+
 const int fan1Pin = A11;
 const int fan2Pin = A12;
 
@@ -905,6 +914,9 @@ void setup()
   
   digitalWrite(ATOPumpPin,LOW);
 
+  //yusuf
+//  pinMode(buzzer1Pin, OUTPUT); // Set buzzer - pin A10 as an output
+ 
   //yusuf change from MCP9701AT-E/TT to DS18B20 
   pinMode(internalTempPin,INPUT);
   //analogWrite(fan1Pin, 255);
@@ -1265,6 +1277,16 @@ void loop()
 
 }
 
+//yusuf
+void buzzerAlert() 
+{
+  NewTone(TONE_PIN, 1000); // Send 1KHz sound signal...
+  delay(1000);        // ...for 1 sec
+  noNewTone(TONE_PIN);     // Stop sound...
+  delay(3000);        // ...for 1sec
+}
+//yusuf
+
 void checkLightRamp()
 {
   // check on the fading of the lights  
@@ -1305,12 +1327,13 @@ void checkATO()
       {
         ReservoirLevel = digitalRead(ATOFloatPin);
         if(ReservoirLevel==HIGH)clearATOdisplay(); //if level goes from low to high clear display
-        //Serial.print(F("yusuf1.\n"));
+        // Serial.print(F("yusuf1.\n"));
+        buzzerAlert(); //yusuf
       }else
       {
         ReservoirLevel = digitalRead(ATOFloatPin);
         if(ReservoirLevel==LOW)clearATOdisplay(); //if level goes from low to high clear display
-        //Serial.print(F("yusuf2.\n"));
+        //Serial.print(F("yusuf2.\n")); loop when ATO high
       }
     }else{ReservoirLevel = HIGH;}
     
@@ -1321,6 +1344,7 @@ void checkATO()
       {
         Serial.print(F("Low water level detected.\n"));
         ATOStartTime = now();
+        buzzerAlert(); //yusuf
       }
       // if pump is off and water level has been low for long enough turn pump ON, 
       // this limits how often pump can turn on.
@@ -1348,8 +1372,9 @@ void checkATO()
     {
       Serial.print(F("ATO reservoir low, turning pump off.\n"));
       //turn pump off if we run out of water
+      buzzerAlert(); //yusuf
       digitalWrite(ATOPumpPin,LOW);//turn ATO off
-      ATOPumpState = false;      
+      ATOPumpState = false;
     }
     if(WaterLevel == HIGH)
     {
