@@ -116,26 +116,26 @@ void firstRunSetup()
     EEPROM.write(243,0);   //
     
     // dosing schedules
-    EEPROM.write(300,7);   // pump1 on hour
-    EEPROM.write(301,0);   //       on minute
-    EEPROM.write(302,0);   //       Sun
+    EEPROM.write(300,9);   // pump1 on hour
+    EEPROM.write(301,1);   //       on minute
+    EEPROM.write(302,1);   //       Sun
     EEPROM.write(303,1);   //       Mon
-    EEPROM.write(304,0);   //       Tue
+    EEPROM.write(304,1);   //       Tue
     EEPROM.write(305,1);   //       Wed
-    EEPROM.write(306,0);   //       Thur
+    EEPROM.write(306,1);   //       Thur
     EEPROM.write(307,1);   //       Fri
-    EEPROM.write(308,0);   //       Sat
-    EEPROM.write(309,7);   // pump2 on hour
-    EEPROM.write(310,0);   //       on minute
-    EEPROM.write(311,0);   //       Sun
-    EEPROM.write(312,0);   //       Mon
+    EEPROM.write(308,1);   //       Sat
+    EEPROM.write(309,9);   // pump2 on hour
+    EEPROM.write(310,2);   //       on minute
+    EEPROM.write(311,2);   //       Sun
+    EEPROM.write(312,1);   //       Mon
     EEPROM.write(313,1);   //       Tue
-    EEPROM.write(314,0);   //       Wed
+    EEPROM.write(314,1);   //       Wed
     EEPROM.write(315,1);   //       Thur
-    EEPROM.write(316,0);   //       Fri
+    EEPROM.write(316,1);   //       Fri
     EEPROM.write(317,1);   //       Sat
-    EEPROM.write(318,10);  // pump3 on hour
-    EEPROM.write(319,0);   //       on minute
+    EEPROM.write(318,9);  // pump3 on hour
+    EEPROM.write(319,3);   //       on minute
     EEPROM.write(320,1);   //       Sun
     EEPROM.write(321,1);   //       Mon
     EEPROM.write(322,1);   //       Tue
@@ -145,8 +145,8 @@ void firstRunSetup()
     EEPROM.write(326,1);   //       Sat
 
     //yusuf
-    EEPROM.write(327,10);  // pump4 on hour
-    EEPROM.write(328,0);   //       on minute
+    EEPROM.write(327,9);  // pump4 on hour
+    EEPROM.write(328,4);   //       on minute
     EEPROM.write(329,1);   //       Sun
     EEPROM.write(330,1);   //       Mon
     EEPROM.write(331,1);   //       Tue
@@ -155,8 +155,8 @@ void firstRunSetup()
     EEPROM.write(334,1);   //       Fri
     EEPROM.write(335,1);   //       Sat
 
-    EEPROM.write(336,10);  // pump5 on hour
-    EEPROM.write(337,0);   //       on minute
+    EEPROM.write(336,9);  // pump5 on hour
+    EEPROM.write(337,5);   //       on minute
     EEPROM.write(338,1);   //       Sun
     EEPROM.write(339,1);   //       Mon
     EEPROM.write(340,1);   //       Tue
@@ -165,8 +165,8 @@ void firstRunSetup()
     EEPROM.write(343,1);   //       Fri
     EEPROM.write(344,1);   //       Sat
 
-    EEPROM.write(345,10);  // pump6 on hour
-    EEPROM.write(346,0);   //       on minute
+    EEPROM.write(345,9);  // pump6 on hour
+    EEPROM.write(346,6);   //       on minute
     EEPROM.write(347,1);   //       Sun
     EEPROM.write(348,1);   //       Mon
     EEPROM.write(349,1);   //       Tue
@@ -175,8 +175,8 @@ void firstRunSetup()
     EEPROM.write(352,1);   //       Fri
     EEPROM.write(353,1);   //       Sat
 
-    EEPROM.write(354,10);  // pump7 on hour
-    EEPROM.write(355,0);   //       on minute
+    EEPROM.write(354,9);  // pump7 on hour
+    EEPROM.write(355,7);   //       on minute
     EEPROM.write(356,1);   //       Sun
     EEPROM.write(357,1);   //       Mon
     EEPROM.write(358,1);   //       Tue
@@ -185,8 +185,8 @@ void firstRunSetup()
     EEPROM.write(361,1);   //       Fri
     EEPROM.write(362,1);   //       Sat
 
-    EEPROM.write(363,10);  // pump8 on hour
-    EEPROM.write(364,0);   //       on minute
+    EEPROM.write(363,9);  // pump8 on hour
+    EEPROM.write(364,8);   //       on minute
     EEPROM.write(365,1);   //       Sun
     EEPROM.write(366,1);   //       Mon
     EEPROM.write(367,1);   //       Tue
@@ -211,18 +211,18 @@ void firstRunSetup()
     //ATO settings
     EEPROM.write(40,1);   // 40 // ATO Enabled
     EEPROM.write(41,1);   // 41 // Reservoir switch Enabled
-    EEPROM.write(42,60);  // 42 // Low level wait time in minutes
-    EEPROM.write(43,18);  // 43 // Max run-time (multiple of 10 seconds)
+    EEPROM.write(42,1);  // 42 // Low level wait time in minutes
+    EEPROM.write(43,120);  // 43 // Max run-time (multiple of 10 seconds)
     EEPROM.write(44,1);   // 44 // ATO alarm
     
     // Sensor information
     EEPROM.write(50,1);    // 50 // Temp sensor 1 installed (water)
     EEPROM.write(51,1);    // 51 // Temp sensor 2 installed (heatsink)
-    EEPROM.write(52,1);    // 52 // Internal sensor installed (MCP9701)
-    EEPROM.write(53,22);   // 53 // Heatsink fan on temperature, default 40
-    EEPROM.write(54,20);   // 54 // Heatsink fan off temperature, default 35
-    EEPROM.write(55,22);   // 55 // Internal fan on temperature, default 40
-    EEPROM.write(56,20);   // 56 // Internal fan off temperature, default 35
+    EEPROM.write(52,0);    // 52 // Internal sensor installed (MCP9701)
+    EEPROM.write(53,30);   // 53 // Heatsink fan on temperature, default 40
+    EEPROM.write(54,24);   // 54 // Heatsink fan off temperature, default 35
+    EEPROM.write(55,30);   // 55 // Internal fan on temperature, default 40
+    EEPROM.write(56,27);   // 56 // Internal fan off temperature, default 35
     EEPROM.write(57,1);    // 57 // Display in celcius?
     EEPROM.write(58,128);  // 58 // sensor 1 calibration offset
     EEPROM.write(59,128);  // 59 // sensor 2 calibration offset
@@ -232,32 +232,32 @@ void firstRunSetup()
     EEPROM.write(63,0);    // 63 // display sensor 1 on home screen
     
     // Pump information
-    EEPROM.write(20,10);  // 20 // pump 1 dose in mL
-    EEPROM.write(21,10);  // 21 // pump 2 dose in mL
-    EEPROM.write(22,10);   // 22 // pump 3 dose in mL
+    EEPROM.write(20,1);  // 20 // pump 1 dose in mL
+    EEPROM.write(21,1);  // 21 // pump 2 dose in mL
+    EEPROM.write(22,1);   // 22 // pump 3 dose in mL
     EEPROM.write(23,63);  // 23 // pump 1 ms^10/ml
     EEPROM.write(24,63);  // 24 // pump 2 ms^10/ml
     EEPROM.write(25,63);  // 25 // pump 3 ms^10/ml
     EEPROM.write(26,500); // 26 // dosing 1 reserviors capacity in mL
-    EEPROM.write(27,0);   // 27 // dosing 2 reserviors capacity in ML
+    EEPROM.write(27,500);   // 27 // dosing 2 reserviors capacity in ML
     EEPROM.write(261,500); // 28 // dosing 3 reserviors capacity in mL
-    EEPROM.write(262,0);   // 27 // dosing 2 reserviors capacity in ML
+    EEPROM.write(262,500);   // 27 // dosing 2 reserviors capacity in ML
     EEPROM.write(263,500); // 28 // dosing 3 reserviors capacity in mL
-    EEPROM.write(264,0);   // 28 // dosing 3 reserviors capacity in mL
+    EEPROM.write(264,500);   // 28 // dosing 3 reserviors capacity in mL
     
-    EEPROM.write(32,100); // remaining volume for pump 1 (high byte ^10)
+    EEPROM.write(32,500); // remaining volume for pump 1 (high byte ^10)
     EEPROM.write(33,0);   // remaining volume for pump 1 (low byte)
-    EEPROM.write(34,100); // remaining volume for pump 2 (high byte ^10) 
+    EEPROM.write(34,500); // remaining volume for pump 2 (high byte ^10) 
     EEPROM.write(35,0);   // remaining volume for pump 2 (low byte)
-    EEPROM.write(36,100); // remaining volume for pump 3 (high byte ^10)
+    EEPROM.write(36,500); // remaining volume for pump 3 (high byte ^10)
     EEPROM.write(37,0);   // remaining volume for pump 3 (low byte)
 
     //yusuf
-    EEPROM.write(450,10);   // 29 // pump 4 dose in mL
-    EEPROM.write(451,10);   // 30 // pump 5 dose in mL
-    EEPROM.write(452,10);   // 31 // pump 6 dose in mL
-    EEPROM.write(453,10);   // 32 // pump 7 dose in mL
-    EEPROM.write(454,10);   // 33 // pump 8 dose in mL
+    EEPROM.write(450,1);   // 29 // pump 4 dose in mL
+    EEPROM.write(451,1);   // 30 // pump 5 dose in mL
+    EEPROM.write(452,1);   // 31 // pump 6 dose in mL
+    EEPROM.write(453,1);   // 32 // pump 7 dose in mL
+    EEPROM.write(454,1);   // 33 // pump 8 dose in mL
 
     EEPROM.write(455,63);  // 34 // pump 4 ms^10/ml
     EEPROM.write(456,63);  // 35 // pump 5 ms^10/ml
@@ -271,15 +271,15 @@ void firstRunSetup()
     EEPROM.write(463,500); // 42 // dosing 7 reserviors capacity in mL
     EEPROM.write(464,500); // 43 // dosing 8 reserviors capacity in mL
 
-    EEPROM.write(465,100); // remaining volume for pump 4 (high byte ^10)
+    EEPROM.write(465,500); // remaining volume for pump 4 (high byte ^10)
     EEPROM.write(466,0);   // remaining volume for pump 4 (low byte)
-    EEPROM.write(467,100); // remaining volume for pump 5 (high byte ^10)
+    EEPROM.write(467,500); // remaining volume for pump 5 (high byte ^10)
     EEPROM.write(468,0);   // remaining volume for pump 5 (low byte)
-    EEPROM.write(469,100); // remaining volume for pump 6 (high byte ^10)
+    EEPROM.write(469,500); // remaining volume for pump 6 (high byte ^10)
     EEPROM.write(470,0);   // remaining volume for pump 6 (low byte)
-    EEPROM.write(471,100); // remaining volume for pump 7 (high byte ^10)
+    EEPROM.write(471,500); // remaining volume for pump 7 (high byte ^10)
     EEPROM.write(472,0);   // remaining volume for pump 7 (low byte)
-    EEPROM.write(473,100); // remaining volume for pump 8 (high byte ^10)
+    EEPROM.write(473,500); // remaining volume for pump 8 (high byte ^10)
     EEPROM.write(474,0);   // remaining volume for pump 8 (low byte)
     //yusuf
     

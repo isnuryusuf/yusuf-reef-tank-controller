@@ -184,8 +184,8 @@ void processMyTouch() // this is a huge block dedicated to processing all touch 
     else if ((x>=15)&&(x<=64)&&(y>=198)&&(y<=246))    // Heat power
     {
       // toggle power
-      if (globalPower.pwrHeat==0) AlarmPwrHeat_On();
-      else if (globalPower.pwrHeat==1)AlarmPwrHeat_Off();
+      if (globalPower.pwrHeat==0) AlarmPwrHeat_Off();
+      else if (globalPower.pwrHeat==1)AlarmPwrHeat_On();
       // draw icons
       myFiles.load(15, 212, 48, 48, pwrHeatIcon[globalPower.pwrHeat] );
       myFiles.load(34, 264, 10, 11, pwrDot[globalPower.pwrHeat]);

@@ -228,9 +228,9 @@
 //yusuf
 
 UTFT myGLCD(ILI9341_16,38,39,40,41); // start up an instance of the TFT screen
-//URTouch myTouch(46,45,44,43,42);  // start up an instance of for touch
+URTouch myTouch(46,45,44,43,42);  // start up an instance of for touch
 //UTouch myTouch(46,45,44,43,42); //yusuf
-URTouch myTouch(6, 5, 4, 3, 2); // For standard TFT shield
+//URTouch myTouch(6, 5, 4, 3, 2); // For standard TFT shield
 //UTouch myTouch(6, 5, 4, 3, 2); // yusuf
 
 // file system object
@@ -865,7 +865,7 @@ void setup()
   //pinMode(led1Pin, OUTPUT);
   //pinMode(led2Pin, OUTPUT);
   //pinMode(led3Pin, OUTPUT);
-  //(led4Pin, OUTPUT);
+  //pinMode(led4Pin, OUTPUT);
   //pinMode(led5Pin, OUTPUT);
   //pinMode(led6Pin, OUTPUT);
 
@@ -1324,7 +1324,8 @@ void checkATO()
         //Serial.println(F("\nNyala")); 
       } else {
       digitalWrite(TankFloatPin, LOW);
-    } 
+    }
+    //delay(1000);
     WaterLevel = digitalRead(TankFloatPin);
     if(ResSwitchEnabled)
     {
