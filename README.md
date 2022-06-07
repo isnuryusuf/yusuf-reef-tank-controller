@@ -12,6 +12,7 @@ This project was based off the iAqua controller written by Dan Cunningham with n
 - Automatic water top-off 
   - Float switch inputs for tank and reservoir
   - Set maximum run-time with alarm flagged if exceeded
+  - using non touch water sensor
 - Feeding mode
   - Monitor time since last fed
   - Control outlets during feeding (ie turn off pumps)
@@ -19,11 +20,12 @@ This project was based off the iAqua controller written by Dan Cunningham with n
   - 6-channel PWM or IR control of e-series LED
   - 4 lighting levels (moonlight, sunrise, mid-morning and full daylight)
 - Dosing
-  - 3 channels
+  - 8 channels
   - Individual settings for each channel
 - 8 power outlet control
   - Manual control or set on/off times
   - Aux outlets can be set to cycle times (ie on 10 minutes every 2 hours)
+- Buzzer for allerting
 
 
 ## Hardware
